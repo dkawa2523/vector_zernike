@@ -1,0 +1,32 @@
+# batch_template.yaml
+global:
+  compare_models: false
+  plot: true
+  clean_output: true
+  # データセットを配置したディレクトリ。コマンドライン引数で指定しない場合、この値が使われます。
+  dataset_dir: .
+  # 係数集約CSVを保存するディレクトリ。省略すると <dataset_dir>/aggregated になります。
+  aggregated_dir: aggregated
+  data_file: dummy.csv        # ← ここは自動で置換
+  output_root: dummy_out      # ← ここも自動で置換
+
+vector_zernike:
+  enable: true
+  n_max: 5
+  include_B: true
+
+complex_zernike:
+  enable: true
+  n_max: 5
+
+overlay_poly:
+  enable: true
+  model_terms: [8, 14, 26]
+
+scalar_zernike:           # ← 追加済み手法
+  enable: true
+  n_max: 6
+
+io:
+  save_png: true
+  precision: 7
